@@ -12,7 +12,10 @@ class Person(Base):
     id = Column('id', Integer, primary_key=True)
     username = Column('username', String, unique=True)
 
-Base.metadata.create_all(bind=engine)
+# This statement create the table Person with sql-alchemy
+# We will create the tables with alembic
+# Base.metadata.create_all(bind=engine)
+
 Session = sessionmaker(bind=engine)
 
 session = Session()
